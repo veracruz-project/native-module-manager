@@ -1,0 +1,3 @@
+[submodule "sandboxed-api"]
+	path = sandboxed-api
+	url = https://github.com/google/sandboxed-api
