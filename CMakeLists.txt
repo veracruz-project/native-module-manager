@@ -12,6 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# A program using Google's Sandboxed API to run Veracruz native modules in a
+# sandboxed environment.
+#
+# AUTHORS
+#
+# The Veracruz Development Team.
+#
+# COPYRIGHT AND LICENSING
+#
+# See the `LICENSE_MIT.markdown` file in the root directory for copyright and
+# licensing information.
+# Based on Google's Sandboxed API, Apache-2.0 license (https://github.com/google/sandboxed-api/blob/main/LICENSE)
+
 add_subdirectory(sandboxed-api)
 
 add_executable(native-module-sandboxer
