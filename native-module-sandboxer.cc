@@ -195,6 +195,8 @@ int main(int argc, char* argv[]) {
       struct stat64 st;
       PCHECK(stat64(source.c_str(), &st) != -1)
           << "could not stat additional mount " << source;
+      // Add file with read and write permissions. This is acceptable since the
+      // filesystem is a copy anyway
       if ((st.st_mode & S_IFMT) == S_IFDIR) {
         builder.AddDirectoryAt(source, target, false);
       } else {
