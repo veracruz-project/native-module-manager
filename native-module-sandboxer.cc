@@ -30,6 +30,8 @@ Based on an example from Google's sandboxed-api, Apache 2.0 license (https://git
 //     --sandbox2_danger_danger_permit_all
 //     --logtostderr
 //     /bin/ls
+// Note that running the sandboxer in Docker without `--init` will result in the
+// fork server producing zombie processes whose statuses never get reaped.
 
 #include <sys/resource.h>
 #include <sys/stat.h>
