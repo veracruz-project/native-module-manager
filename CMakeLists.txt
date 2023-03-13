@@ -25,6 +25,8 @@
 # licensing information.
 # Based on Google's Sandboxed API, Apache-2.0 license (https://github.com/google/sandboxed-api/blob/main/LICENSE)
 
+project(NativeModuleSandboxer C CXX ASM)
+
 add_subdirectory(sandboxed-api)
 
 add_executable(native-module-sandboxer
