@@ -31,7 +31,7 @@ Based on an example from Google's sandboxed-api, Apache 2.0 license (https://git
 //     --logtostderr
 //     /bin/ls
 // Note that running the sandboxer in Docker without `--init` will result in the
-// fork server producing zombie processes whose statuses never get reaped.
+// fork server producing zombie processes whose status never gets reaped.
 
 #include <sys/resource.h>
 #include <sys/stat.h>
@@ -174,7 +174,6 @@ int main(int argc, char* argv[]) {
   }
 
   sandbox2::PolicyBuilder builder;
-  builder.AddPolicyOnSyscall(__NR_tee, {KILL});
   builder.DangerDefaultAllowAll();
 
   if (absl::GetFlag(FLAGS_sandbox2tool_need_networking)) {
