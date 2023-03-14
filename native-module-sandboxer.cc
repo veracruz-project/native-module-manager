@@ -25,13 +25,14 @@ Based on an example from Google's sandboxed-api, Apache 2.0 license (https://git
 //
 // Example usage:
 //   native-module-sandboxer
-//     --v=1
 //     --sandbox2tool_resolve_and_add_libraries
-//     --sandbox2_danger_danger_permit_all
-//     --logtostderr
-//     /bin/ls
-// Note that running the sandboxer in Docker without `--init` will result in the
-// fork server producing zombie processes whose status never gets reaped.
+//     --sandbox2tool_mount_tmp
+//     --sandbox2tool_additional_bind_mounts "/tmp/nmm/tflite-nm/input=>/input,/tmp/nmm/tflite-nm/program_internal=>/program_internal"
+//     tflite-nm
+//
+// Note that if you are running the sandboxer in Docker, running Docker without
+// `--init` will result in the fork server producing zombie processes whose
+// status never gets reaped.
 
 #include <sys/resource.h>
 #include <sys/stat.h>
