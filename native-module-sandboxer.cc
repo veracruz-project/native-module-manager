@@ -18,7 +18,7 @@ The Veracruz Development Team.
 COPYRIGHT AND LICENSING
 See the `LICENSE_MIT.markdown` file in the example's root directory for
 copyright and licensing information.
-Based on an example from Google's sandboxed-api, Apache 2.0 license (https://github.com/google/sandboxed-api)
+Based on an example from Google's Sandboxed API, Apache 2.0 license (https://github.com/google/sandboxed-api/blob/main/LICENSE)
 */
 
 // A program to sandbox Veracruz native modules.
