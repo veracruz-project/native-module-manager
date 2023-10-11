@@ -27,24 +27,21 @@
 
 project(NativeModuleSandboxer C CXX ASM)
 
+cmake_minimum_required(VERSION 3.16)
+
+if(COMMAND cmake_policy)
+  cmake_policy(SET CMP0003 NEW)
+endif(COMMAND cmake_policy)
+
 add_subdirectory(sandboxed-api)
 
 add_executable(native-module-sandboxer
   native-module-sandboxer.cc
 )
 set_target_properties(native-module-sandboxer PROPERTIES OUTPUT_NAME native-module-sandboxer)
-add_executable(native-module-sandboxer)
 target_link_libraries(native-module-sandboxer PRIVATE
-  absl::flags
   absl::flags_parse
   absl::flags_usage
-  absl::log
-  absl::log_globals
   absl::log_initialize
-  absl::strings
-  absl::time
-  sandbox2::bpf_helper
   sandbox2::sandbox2
-  sandbox2::util
-  sapi::base
 )
